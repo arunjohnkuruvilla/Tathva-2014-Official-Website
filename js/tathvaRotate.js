@@ -25,15 +25,15 @@ var container, stats;
 			function settingType(textType) {
 
 			    if (textType == 0) {
-			        document.forms['myform'].hidden.value = "0";
+			        document.form['myform'].hidden.value = "0";
 			        init(2);
 			    }
 			    else if (textType == 1) {
-			        document.forms['myform'].hidden.value = "1";
+			        document.form['myform'].hidden.value = "1";
 			        init(2);
 			    }
 			    else if (textType == 2) {
-			        document.forms['myform'].hidden.value = "2";
+			        document.form['myform'].hidden.value = "2";
 			        init(2);
 			    }
 
@@ -44,6 +44,7 @@ var container, stats;
 			    var container;
 
 			    container = document.getElementById('container');
+			    var homeSlide = document.getElementById('home-slider');
 
                 /*Remove node container scene*/
 				if (container.hasChildNodes()) {
@@ -246,7 +247,7 @@ var container, stats;
 
 				container.appendChild( renderer.domElement );
 
-				document.addEventListener( 'mousedown', onDocumentMouseDown, false );
+				//document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
 			}
 

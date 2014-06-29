@@ -114,8 +114,6 @@
 <!-- Font Icons -->
 <link href="css.fonts.css" rel="stylesheet">
 
-<!-- Shortcodes -->
-<link href="css/shortcodes.css" rel="stylesheet">
 
 <!--
 <link href="http://themes.alessioatzeni.com/html/chakra/dark/_include/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -177,7 +175,7 @@
               <?php 
                 $query1="SELECT name,cat_id FROM `event_cats` WHERE `par_cat`='1' ORDER BY FIELD(cat_id, 10, 9, 8, 7, 5) DESC";
                   $result1=$mysqli->query($query1);
-                  echo "<ul style='padding-left:0px;margin-top: 50px;'>";
+                  echo "<ul style='padding-left:0px;margin-top: 60px;'>";
                   while($row1=$result1->fetch_assoc())
                   {
                   echo'

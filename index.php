@@ -152,9 +152,19 @@
             </div>
           </div>
           <div class="span6" style="height:400px;background:blue;">
-            <form>
-              <input type="text">
+           <div class="row">
+        <div class="span9">
+        
+          <form id="contact-form" class="contact-form" action="#">
+              <p class="contact-name">
+                <input id="contact_name" type="text" placeholder="Full Name" value="" name="name">
+                </p>
+                <p class="contact-email">
+                  <input id="contact_email" type="text" placeholder="Email Address" value="" name="email">
+                </p>
             </form>
+        </div>   
+      </div>
           </div>
        
       </div>
@@ -168,7 +178,7 @@
     </video>
     <form name="myform" action="">
     <!--BEGIN CONTENT-->
-        <div id="container"><canvas width="100%" height="100%"></canvas></div> 
+        <div id="container"><canvas width="100%" height="100%" id="tathvarotate"></canvas></div> 
     </form>
 <div class="bmenu">
                             <ul>
@@ -208,7 +218,9 @@
         
         <nav id="menu">
         	<ul id="menu-nav">
-                <li style="visibility:hidden"><a href="#about">About Us</a></li>
+                <li><form>
+              <input type="text">
+            </form></li>
                 <li class=""><a href="#services">general Info</a></li>
             </ul>
         </nav>
@@ -399,6 +411,7 @@
                 </div>
                 
             </div>
+      
 </div>
 </div>
 <!-- End Contact Section -->
@@ -425,7 +438,7 @@
 //alert($('#highlights').offset().top);
 
 $('#button1').click(function() {
-  $.ajax("/profile-details.php", 
+  $.ajax("profile-details.php", 
     {
       dataType: "json",
       success: fillProfile,
@@ -499,5 +512,5 @@ function fillProfile(d)  //tat_id: "", name: "", college: "", phone: "", email: 
         <script src="Canvas - Particles Text_files/helvetiker_regular.typeface.js" type="text/javascript"></script>
         <script src="Canvas - Particles Text_files/fontastique.js" type="text/javascript"></script>
         
-<script type="text/javascript" src="js/tathvaRotate.js"></script>
+        <script type="text/javascript" src="js/tathvaRotate.js"></script>
 </body></html>
