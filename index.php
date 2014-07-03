@@ -14,7 +14,7 @@
         }
         else
         {
-            $loginMenu = '<li><a href="login.php">Register/Login</a></li>';
+            $loginMenu = '<li><a id="login-button">Register/Login</a></li>';
         }
 
 ?>
@@ -167,6 +167,27 @@
       </div>
           </div>
        
+      </div>
+
+      <div id="login-panel">
+        <div id="signup-overlay" class="halfpanel">
+          <span>LOGIN</span>
+        </div> 
+        <div id="signin-overlay" class="halfpanel">
+          <span>REGISTER</span>
+        </div> 
+        <div id="signup-left" class="halfpanel">
+          <span>LOGIN</span>
+        </div> 
+        <div id="signup-right" class="halfpanel">
+          <span>LOGIN</span>
+        </div> 
+        <div id="signin-left" class="halfpanel">
+          <span>REGISTER</span>
+        </div>
+        <div id="signin-right" class="halfpanel">
+          <span>REGISTER</span>
+        </div>
       </div>
 <!-- Homepage Slider -->
 <div id="home-slider">	
@@ -432,11 +453,15 @@
 
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
 <script type="text/javascript">
 //alert($('#home-slider').offset().top);
 //alert($('#highlights').offset().top);
-
+var currLeft;
+var currRight;
+var panelVisible = 0;
+var selectionMade = 0;
 $('#button1').click(function() {
   $.ajax("profile-details.php", 
     {
@@ -447,6 +472,50 @@ $('#button1').click(function() {
   $('#dashbar-panel').slideToggle('fast');
 });
 
+$('#login-button').click(function () {
+  if(panelVisible == 0)
+  {
+    panelVisible = 1;
+    $('#login-panel').slideToggle('slow');
+  }
+  else
+  {
+    if(selectionMade){
+      resetPanels();
+    }
+    $('#login-panel').slideToggle('slow');
+  }
+});
+
+$('#signup-overlay').click(function() {
+  $('#signup-overlay').hide('slide', {direction: 'up'}, 1000);
+  $('#signin-overlay').hide('slide', {direction: 'down'}, 1000,function() {
+    currLeft = $('#signup-left');
+    currRight = $('#signup-right');
+    selectionMade = 1;
+    $('#signup-left').show('slide', {direction: 'down'}, 1000);
+    $('#signup-right').show('slide', {direction: 'up'}, 1000);
+  });
+});
+
+$('#signin-overlay').click(function() {
+  $('#signup-overlay').hide('slide', {direction: 'up'}, 1000);
+  $('#signin-overlay').hide('slide', {direction: 'down'}, 1000,function() {
+    currLeft = $('#signin-left');
+    currRight = $('#signin-right');
+    selectionMade = 1;
+    $('#signin-left').show('slide', {direction: 'down'}, 1000);
+    $('#signin-right').show('slide', {direction: 'up'}, 1000);
+  });
+});
+
+function resetPanels()
+{
+  currLeft.hide('slide', {direction: 'up'}, 1000);
+  currRight.hide('slide', {direction: 'up'}, 1000);
+  $('#signup-overlay').show();
+  $('#signin-overlay').show();
+}
     $(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {

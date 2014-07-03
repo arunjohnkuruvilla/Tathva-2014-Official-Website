@@ -150,6 +150,87 @@ padding: 0;
 	display: none;
 }
 
+#login-panel
+{
+	width: 100%;
+	color: white;
+	height: 400px;
+	position: absolute;
+	z-index: 999999;		
+	text-align:center;
+	background:rgba(0,0,0,0.6);
+	clear: both;
+}
+#login-panel
+{
+	bottom: 3.3em;
+	display: none;
+}
+#login-panel .halfpanel
+{height:100%;width:50%;float:left}
+
+#signup-overlay
+{
+	background:white;
+}
+
+#signup-overlay:hover
+{
+	background:blue;
+	cursor: pointer;
+}
+#signup-overlay span
+{
+	position: relative;
+	top:50%;
+	font-size: 2em;
+	color: black
+}
+
+#signup-left
+{
+	background:green;
+	display: none;
+}
+
+#signup-right
+{
+	background:red;
+	display: none;
+}
+
+
+
+
+#signin-overlay
+{
+	background:black;
+}
+
+#signin-overlay:hover
+{
+	background:blue;
+	cursor: pointer;
+}
+
+#signin-overlay span
+{
+	position: relative;
+	top:50%;
+	font-size: 2em;
+	color: black
+}
+#signin-left
+{
+	background:green;
+	display: none;
+}
+#signin-right
+{
+	background:red;
+	display: none;
+}
+
 
 html, body {
 	height: 100%;width: 100%;margin: 0;padding: 0;
