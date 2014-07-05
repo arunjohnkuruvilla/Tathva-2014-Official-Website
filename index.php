@@ -177,16 +177,41 @@
           <span>REGISTER</span>
         </div> 
         <div id="signup-left" class="halfpanel">
-          <span>LOGIN</span>
+          <form id="signup-form" class="signup-form" action="#">
+              <p>
+                <input id="signup_username" type="text" placeholder="Username" value="" name="username">
+                  <input id="signup_password" type="password" placeholder="Password" value="" name="password">
+                </p>
+                <p >
+                  <input id="signup" type="submit" class="submit" value="REGISTER" name="signup">
+                </p>
+            </form>
         </div> 
         <div id="signup-right" class="halfpanel">
-          <span>LOGIN</span>
+          LOGIN
         </div> 
         <div id="signin-left" class="halfpanel">
-          <span>REGISTER</span>
+          <form id="forgot-form" class="forgot-form" action="#">
+              <p>
+                Forgot your password? Enter your username and we will email your password to your registered email id. Thank you.
+              </p>
+              <p>
+                <input id="forgot_username" type="text" placeholder="Username" value="" name="username">
+              </p>
+            </form>
         </div>
         <div id="signin-right" class="halfpanel">
-          <span>REGISTER</span>
+          <form id="signin-form" class="signin-form" action="#">
+              <p>
+                <input id="signin_username" type="text" placeholder="Username" value="" name="username">
+                </p>
+                <p>
+                  <input id="signin_password" type="password" placeholder="Password" value="" name="password">
+                </p>
+                <p >
+                  <input id="signin" type="submit" class="submit" value="LOGIN" name="signin">
+                </p>
+            </form>
         </div>
       </div>
 <!-- Homepage Slider -->
@@ -239,9 +264,6 @@
         
         <nav id="menu">
         	<ul id="menu-nav">
-                <li><form>
-              <input type="text">
-            </form></li>
                 <li class=""><a href="#services">general Info</a></li>
             </ul>
         </nav>
@@ -451,8 +473,8 @@
 <!-- End Back to Top -->
 <!-- Js -->
 
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+         <script src="js/jquery-1.9.1.min.js"></script>
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
 <script type="text/javascript">
