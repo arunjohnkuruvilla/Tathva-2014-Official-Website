@@ -8,7 +8,7 @@
             $name = $_SESSION['name'];
             $id = $_SESSION['tat_id'];
             $loginMenu = '
-                        <li><a id="button1" idstyle="font-size:1.5em" data-effect="st-effect-11">&#9776;</a></li>
+                        <li><a id="button1" idstyle="font-size:1.5em">&#9776;</a></li>
                         <li><a>'.$name.'</a></li>
                         <li><a href="logout.php">Log out</a></li>';
         }
@@ -86,8 +86,13 @@
       -ms-transform:     translateX(0);
       -o-transform:      translateX(0);
     }
-    </style>
 
+    .has-error
+    {
+      background: red !important;
+    }
+    </style>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
 <title></title>   
 
 <meta name="description" content=""> 
@@ -114,6 +119,7 @@
 
 <!-- Shortcodes -->
 <link href="css/shortcodes.css" rel="stylesheet">
+<link href="css/autocomplete.css" rel="stylesheet">
 
 <!--
 <link href="http://themes.alessioatzeni.com/html/chakra/dark/_include/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -171,17 +177,30 @@
 
       <div id="login-panel">
         <div id="signup-overlay" class="halfpanel">
-          <span>LOGIN</span>
-        </div> 
-        <div id="signin-overlay" class="halfpanel">
           <span>REGISTER</span>
         </div> 
+        <div id="signin-overlay" class="halfpanel">
+          <span>LOGIN</span>
+        </div> 
         <div id="signup-left" class="halfpanel">
-          <form id="signup-form" class="signup-form" action="#">
+          <form id="signupForm" name="signupForm" class="signup-form" onsubmit="return(validate());">
               <p>
-                <input id="signup_username" type="text" placeholder="Username" value="" name="username">
-                  <input id="signup_password" type="password" placeholder="Password" value="" name="password">
-                </p>
+                <input id="signup-name" type="text" placeholder="Name" value="" name="name">
+                <input id="signup-phone" type="text" placeholder="Phone number" value="" name="phonenumber">
+              </p>
+              <p>
+                <input id="signup-email" type="text" placeholder="Email" value="" name="email">
+                <input id="signup-username" type="text" placeholder="Username" value="" name="username">
+                
+              <p >
+                <input id="collegename" type="text" placeholder="College" name="collegename" style="width:50%"/>
+                <input id="collegeid" type="hidden" name="collegeid"/>
+              </p>
+              <br>
+              <p>
+                <input id="signup-pass1" type="password" placeholder="Password" value="" name="pass1">
+                <input id="signup-pass2" type="password" placeholder="Retype Password" value="" name="pass2v">
+              </p>
                 <p >
                   <input id="signup" type="submit" class="submit" value="REGISTER" name="signup">
                 </p>
@@ -196,21 +215,24 @@
                 Forgot your password? Enter your username and we will email your password to your registered email id. Thank you.
               </p>
               <p>
-                <input id="forgot_username" type="text" placeholder="Username" value="" name="username">
+                <input id="forgot-username" type="text" placeholder="Username" value="" name="username">
               </p>
+               <p>
+              <input id="forgot" type="submit" class="submit" value="GET PASSWORD" name="forgot">
+            </p>
             </form>
         </div>
         <div id="signin-right" class="halfpanel">
-          <form id="signin-form" class="signin-form" action="#">
-              <p>
-                <input id="signin_username" type="text" placeholder="Username" value="" name="username">
-                </p>
-                <p>
-                  <input id="signin_password" type="password" placeholder="Password" value="" name="password">
-                </p>
-                <p >
-                  <input id="signin" type="submit" class="submit" value="LOGIN" name="signin">
-                </p>
+         
+            <form id="signin-form" class="signin-form">
+            <p>
+              <input id="signin-username" class="form-input" type="text" name="username" placeholder="Username">
+            </p>
+            <p>
+              <input id="signin-password" class="form-input" type="text" name="password" placeholder="Password">
+            <p>
+              <input id="signin" type="submit" class="submit" value="LOGIN" name="signin">
+            </p>
             </form>
         </div>
       </div>
@@ -222,7 +244,7 @@
         <source src="video/august_video_04.mp4" type="video/mp4; codecs=&quot;avc1.42E01E, mp4a.40.2&quot;"><source src="video/august_video_04.ogv" type="video/ogg">
         <source src="video/august_video_04.webmhd.webm" type="video/webm">
     </video>
-    <form name="myform" action="">
+    <form name="myform" style="margin-top: 0px;">
     <!--BEGIN CONTENT-->
         <div id="container"><canvas width="100%" height="100%" id="tathvarotate"></canvas></div> 
     </form>
@@ -240,8 +262,9 @@
 	<div class="control-nav">
         <nav id="menu" style="float:left;margin-left: 50px;">
             <ul id="menu-nav">
-                <?php echo $loginMenu;?>
+                <?php echo $loginMenu; ?>
             </ul>
+
         </nav>
         <nav id="menu" style="float:right;margin-left: 50px;">
             <ul id="menu-nav">
@@ -273,27 +296,36 @@
 <!-- End Header -->
 
 <div id="highlights" class="page-alternate">
-<div class="container">
-    <!-- Title Page -->
-    <div class="row">
-        <div class="span12">
-            <div class="title-page">
-                <h2 class="title">Highlights</h2>
-                <h3 class="title-description">Learn About our Team &amp; Culture.</h3>
-                
-                <div class="page-description">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
-                    Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
-                    <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
-                </div>
-                
-            </div>
-        </div>
-    </div>
-    <!-- End Title Page -->
-    
-    
+  <div class="container">
+      <!-- Title Page -->
+      <div class="row">
+          <div class="span12">
+              <div class="title-page">
+                  <h2 class="title">Highlights</h2>
+                  <h3 class="title-description">Learn About our Team &amp; Culture.</h3>
+                  <div class="ui-widget">
+
+<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags">
 </div>
+ 
+</div>
+
+                   
+                  <div class="page-description">
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
+                      Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
+                      <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+      <!-- End Title Page -->
+      
+      
+  </div>
 </div>
 
 <!-- Our Work Section -->
@@ -304,6 +336,7 @@
             <div class="span12">
                 <div class="title-page">
                     <h2 class="title">Events</h2>
+                    
                     <h3 class="title-description">Check Out Our Projects on <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Dribbble</a>.</h3>
                     
                     <div class="page-description">
@@ -444,7 +477,7 @@
            <div class="content">
                <p>Stuff for Tab Three</p>
                
-               <img src="http://placedog.com/200/100">
+               <img src="">
            </div> 
        </div>
         
@@ -473,126 +506,12 @@
 <!-- End Back to Top -->
 <!-- Js -->
 
+
          <script src="js/jquery-1.9.1.min.js"></script>
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
 
-<script type="text/javascript">
-//alert($('#home-slider').offset().top);
-//alert($('#highlights').offset().top);
-var currLeft;
-var currRight;
-var panelVisible = 0;
-var selectionMade = 0;
-$('#button1').click(function() {
-  $.ajax("profile-details.php", 
-    {
-      dataType: "json",
-      success: fillProfile,
-      error: function(){salert("Something went wrong!");}
-    });
-  $('#dashbar-panel').slideToggle('fast');
-});
-
-$('#login-button').click(function () {
-  if(panelVisible == 0)
-  {
-    panelVisible = 1;
-    $('#login-panel').slideToggle('slow');
-  }
-  else
-  {
-    if(selectionMade){
-      resetPanels();
-    }
-    $('#login-panel').slideToggle('slow');
-  }
-});
-
-$('#signup-overlay').click(function() {
-  $('#signup-overlay').hide('slide', {direction: 'up'}, 1000);
-  $('#signin-overlay').hide('slide', {direction: 'down'}, 1000,function() {
-    currLeft = $('#signup-left');
-    currRight = $('#signup-right');
-    selectionMade = 1;
-    $('#signup-left').show('slide', {direction: 'down'}, 1000);
-    $('#signup-right').show('slide', {direction: 'up'}, 1000);
-  });
-});
-
-$('#signin-overlay').click(function() {
-  $('#signup-overlay').hide('slide', {direction: 'up'}, 1000);
-  $('#signin-overlay').hide('slide', {direction: 'down'}, 1000,function() {
-    currLeft = $('#signin-left');
-    currRight = $('#signin-right');
-    selectionMade = 1;
-    $('#signin-left').show('slide', {direction: 'down'}, 1000);
-    $('#signin-right').show('slide', {direction: 'up'}, 1000);
-  });
-});
-
-function resetPanels()
-{
-  currLeft.hide('slide', {direction: 'up'}, 1000);
-  currRight.hide('slide', {direction: 'up'}, 1000);
-  $('#signup-overlay').show();
-  $('#signin-overlay').show();
-}
-    $(function() {
-  $('a[href*=#]:not([href=#])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-      if (target.length) {
-        $('html,body').animate({
-          scrollTop: target.offset().top
-        }, 1000);
-        return false;
-      }
-    }
-  });
-});
-    $(window).scroll(function () {
-    winHeight = $(window).height();
-    if ($(window).scrollTop() > $('#highlights').offset().top) {
-        $('.navbar').css('position', 'fixed');
-        $('.navbar').css('top', '0');
-    }
-    else if($(window).scrollTop() < $('#highlights').offset().top) {
-        $('.navbar').css('position', 'relative');
-        $('.navbar').css('top', '0');
-    }
-});
-function fillProfile(d)  //tat_id: "", name: "", college: "", phone: "", email: "", events: []
-{
-  $("#usid").html("<span class=\"grey\">Tathva ID : </span>TAT"+d['tat_id']);
-  $("#uscollege").html("<span class=\"grey\">College: </span>"+d['college']);
-  $("#usphone").html("<span class=\"grey\">Phone: </span>"+d['phone']);
-  $("#usmail").html("<span class=\"grey\">Email: </span>"+d['email']);
-  myevents=d['events'];
-  if(myevents[0]['team_id'] != '')
-    {
-    $("#usersevents").html("<div id=\"eventhead\"></div>");
-    $.each(myevents, function(i, item) 
-    {
-        $("#usersevents").append("<div class=\"profileevent\"><div class=\"everight\" id=\"t"+i+"\"></div><div class=\"eveleft\">"+item.eventname+"</div><div class=\"eveleft\">"+item.eventcode+""+item.team_id+"</div></div>");
-        mymates=myevents[i]['mates'];
-        $.each(mymates, function(j, itema) 
-      {
-        var teammateid = 10000 + itema.tat_id;
-        $("#t"+i).append(itema.name+" - TAT"+teammateid+"<br>");
-        }); 
-      });
-    }
-    else
-    {
-      salert("123");
-    }
-}
-
-    
-
-</script>
+<script type="text/javascript" src="js/login.js"></script>
 
 <script src="Canvas - Particles Text_files/Three.js" type="text/javascript"></script>
         <script src="Canvas - Particles Text_files/RequestAnimationFrame.js" type="text/javascript"></script>
@@ -604,4 +523,10 @@ function fillProfile(d)  //tat_id: "", name: "", college: "", phone: "", email: 
         <script src="Canvas - Particles Text_files/fontastique.js" type="text/javascript"></script>
         
         <script type="text/javascript" src="js/tathvaRotate.js"></script>
+        <script type="text/javascript" src="magic.js"></script>
+        <script>
+ 
+    
+
+  </script>
 </body></html>

@@ -7,8 +7,23 @@ margin: 0;
 padding: 0;
 }
 
+
 #supersized {  display:block; position:fixed; left:0; top:0; overflow:hidden; z-index:-1; height:100%; width:100%; margin:0; padding:0; }
 
+#highlights
+{
+	background-image: url('../images/nites.jpg');
+	height: 100%;
+	width: 100%;
+	background-size: 100%;
+}
+#events
+{
+	background-image: url('../images/events.jpg');
+	height: 100%;
+	width: 100%;
+	background-size: 100%;
+}
 .bmenu li{
     font-size: 50px;
     display: block;
@@ -171,7 +186,7 @@ padding: 0;
 
 #signup-overlay
 {
-	background:white;
+	background:#26292E;
 }
 
 #signup-overlay:hover
@@ -204,7 +219,7 @@ padding: 0;
 
 #signin-overlay
 {
-	background:black;
+	background:#2F3238;
 }
 
 #signin-overlay:hover
@@ -802,6 +817,75 @@ nav#menu #menu-nav li a {
 
 nav#menu #menu-nav li.current a,
 nav#menu #menu-nav li a:hover {
+	color: #DE5E60;
+}
+
+nav#pre-login-menu {
+	float: right;
+	margin-right: 20px;
+}
+
+nav#pre-login-menu #menu-nav {
+	margin: 0;
+	padding: 0;	
+}
+
+nav#pre-login-menu #menu-nav li {
+	list-style: none;
+	display: inline-block;
+	margin-left: 30px;	
+}
+
+nav#pre-login-menu #menu-nav li:first-child {
+	margin-left: 0;	
+}
+
+nav#pre-login-menu #menu-nav li a {
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 60px;
+	display: block;
+	text-transform: uppercase;
+}
+
+nav#pre-login-menu #menu-nav li.current a,
+nav#pre-login-menu #menu-nav li a:hover {
+	color: #DE5E60;
+}
+
+nav#post-login-menu {
+	float: right;
+	margin-right: 20px;
+	display: none;
+}
+
+nav#post-login-menu #menu-nav {
+	margin: 0;
+	padding: 0;	
+}
+
+nav#post-login-menu #menu-nav li {
+	list-style: none;
+	display: inline-block;
+	margin-left: 30px;	
+}
+
+nav#post-login-menu #menu-nav li:first-child {
+	margin-left: 0;	
+}
+
+nav#post-login-menu #menu-nav li a {
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 60px;
+	display: block;
+	text-transform: uppercase;
+}
+
+nav#post-login-menu #menu-nav li.current a,
+nav#post-login-menu #menu-nav li a:hover {
 	color: #DE5E60;
 }
 
@@ -1626,16 +1710,16 @@ nav#menu #menu-nav li a:hover {
     color: #FFFFFF;
 }
 
-#signup-form {
+#signupForm {
 	margin-bottom: 0 auto;	
 }
 
-#signup-form p {
+#signupForm p {
 	margin-bottom: 1px;	
 }
 
-#signup-form input,
-#signup-form textarea {
+#signupForm input,
+#signupForm textarea {
     border: none;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
@@ -1655,7 +1739,7 @@ nav#menu #menu-nav li a:hover {
     resize: none;
 }
 
-#signup-form input {
+#signupForm input {
     width: 40%;
     float: left;
 	-webkit-box-sizing: border-box;
@@ -1663,7 +1747,7 @@ nav#menu #menu-nav li a:hover {
 	box-sizing: border-box;
 }
 
-#signup-form textarea {
+#signupForm textarea {
     width: 100%;
 	resize: vertical;
 	-webkit-box-sizing: border-box;
@@ -1671,7 +1755,7 @@ nav#menu #menu-nav li a:hover {
 	box-sizing: border-box;
 }
 
-#signup-form .submit {
+#signupForm .submit {
     background: #484C52;
     color: #23262C;
     cursor: pointer;
@@ -1688,7 +1772,7 @@ nav#menu #menu-nav li a:hover {
 		    transition: background 0.1s linear 0s, color 0.1s linear 0s;
 }
 
-#signup-form .submit:hover {
+#signupForm .submit:hover {
     background: #DE5E60;
     color: #FFFFFF;
 }

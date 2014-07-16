@@ -2,46 +2,7 @@ $(function()
 {  
 		
 	
-	var college_xhr;
-		$("#college_name").autocomplete({
-		source: function( request, response ) {
-
-				college_xhr = $.ajax({
-					url: "college-list.php",
-					dataType: "json",
-					data: { "q": request.term },
-					success: function (data) {
-						if (!data.length)
-							response( [{ id:"newcollege",label: "Click Here to add your college", value: "" }] );
-						else{
-							response( $.map( data, function( item ) {
-								return { id: item.id, label: item.name, value: item.name }
-							}));
-						}
-					},
-					error: function (jqXHR, tStat) {
-						response([{label: tStat, value: ""}]);
-					}
-				});
-			},
-		minLength: 1,
-		select: function (event, ui) {
-			if (ui.item) {
-				clgid=ui.item.id;
-				if(clgid == "newcollege")
-				{
-					addNewCollege();
-					document.myForm.collegename.value = "";
-				}
-				else
-				{
-				document.myForm.collegeid.value = clgid;
-				document.myForm.collegename.value = ui.item.label;
-				return false;
-				}
-			}
-		}
-	});
+	
 		
 	/*$("#college_overshadow").bind("click",function()
 		{
