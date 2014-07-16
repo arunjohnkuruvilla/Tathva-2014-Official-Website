@@ -10,10 +10,10 @@ $(document).ready(function() {
 			'name'					: $('#signup-name').val(),
 			'phone'					: $('#signup-phone').val(),
 			'email'					: $('#signup-email').val(),
-			'username' 				: $('#signin-username').val(),
+			'username' 				: $('#signup-username').val(),
 			'college'				: $('#collegeid').val(),
-			'password1' 			: $('#signin-password').val(),
-			'password2'				: $('#signup-name').val()
+			'password1' 			: $('#signup-pass1').val(),
+			'password2'				: $('#signup-pass2').val()
 		};
 		// process the form
 		$.ajax({
@@ -75,11 +75,11 @@ function updateSignIn(data)
 {
 	if (data.formIncomplete) {
 					
-		// handle errors for name ---------------
+		// handle errors for username ---------------
 		if (data.errors.username) {
 			$('#signin-username').addClass('has-error'); // add the error class to show red input
 		}
-		// handle errors for email ---------------
+		// handle errors for password ---------------
 		if (data.errors.password) {
 			$('#signin-password').addClass('has-error'); // add the error class to show red input
 		}
@@ -103,8 +103,60 @@ function updateSignIn(data)
 	}
 }
 
-//
+//function to update panel after register
+function updateSignUp(data) {
+	if (data.formIncomplete) {
+		
+		// handle errors for name ---------------
+		if (data.errors.name) {
+			$('#signup-name').addClass('has-error'); // add the error class to show red input
+		}			
+		// handle errors for name ---------------
+		if (data.errors.phone) {
+			$('#signup-phone').addClass('has-error'); // add the error class to show red input
+		}
+		// handle errors for name ---------------
+		if (data.errors.email) {
+			$('#signup-email').addClass('has-error'); // add the error class to show red input
+		}
+		// handle errors for name ---------------
+		if (data.errors.college) {
+			$('#collegename').addClass('has-error'); // add the error class to show red input
+		}
+		// handle errors for name ---------------
+		if (data.errors.username) {
+			$('#signup-username').addClass('has-error'); // add the error class to show red input
+		}
+		// handle errors for email ---------------
+		if (data.errors.password1) {
+			$('#signup-pass1').addClass('has-error'); // add the error class to show red input
+		}
+		// handle errors for email ---------------
+		if (data.errors.password2) {
+			$('#signup-pass2').addClass('has-error'); // add the error class to show red input
+		}
 
+	} 
+	else if(! data.success){
+		//$("#signin-username").val("");
+		//$("#signin-password").val("");
+		//$('#signin-form').append('<p>sorry Registeration Failed...Please try again</p>');
+		alert('Registeration unsuccessfull');
+	}
+	else
+	{
+		alert("Registeration successfull");
+		/*$('#signin-form').empty();
+		resetPanels();
+		$('#login-panel').hide('slide', {direction: 'down'}, 1000,function() {
+			$('#menu-nav').append('<li><a id="button1" idstyle="font-size:1.5em">&#9776;</a></li>');
+			$('#menu-nav').append('<li><a>' + data.message.username + '</a></li>');
+				$('#menu-nav').append('<li><a href="logout.php">LOG OUT</a></li>');
+		});
+		$('#menu-nav').empty();*/
+	}
+	
+}
 
 //function to reset the login panel after signin or signup
 function resetPanels()

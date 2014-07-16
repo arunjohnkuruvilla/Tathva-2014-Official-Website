@@ -183,23 +183,23 @@
           <span>LOGIN</span>
         </div> 
         <div id="signup-left" class="halfpanel">
-          <form id="signupForm" name="signupForm" class="signup-form" onsubmit="return(validate());">
+          <form id="signupForm" name="signupForm" class="signup-form">
               <p>
-                <input id="signup-name" type="text" placeholder="Name" value="" name="name">
-                <input id="signup-phone" type="text" placeholder="Phone number" value="" name="phonenumber">
+                <input id="signup-name" type="text" class="form-input" placeholder="Name" value="" name="name">
+                <input id="signup-phone" type="text" class="form-input" placeholder="Phone number" value="" name="phonenumber">
               </p>
               <p>
-                <input id="signup-email" type="text" placeholder="Email" value="" name="email">
-                <input id="signup-username" type="text" placeholder="Username" value="" name="username">
+                <input id="signup-email" type="text" class="form-input" placeholder="Email" value="" name="email">
+                <input id="signup-username" type="text" class="form-input" placeholder="Username" value="" name="username">
                 
               <p >
-                <input id="collegename" type="text" placeholder="College" name="collegename" style="width:50%"/>
-                <input id="collegeid" type="hidden" name="collegeid"/>
+                <input id="collegename" type="text" class="form-input" placeholder="College" name="collegename" style="width:50%"/>
+                <input id="collegeid" type="hidden" class="form-input" name="collegeid"/>
               </p>
               <br>
               <p>
-                <input id="signup-pass1" type="password" placeholder="Password" value="" name="pass1">
-                <input id="signup-pass2" type="password" placeholder="Retype Password" value="" name="pass2v">
+                <input id="signup-pass1" type="password" class="form-input" placeholder="Password" value="" name="pass1">
+                <input id="signup-pass2" type="password" class="form-input" placeholder="Retype Password" value="" name="pass2">
               </p>
                 <p >
                   <input id="signup" type="submit" class="submit" value="REGISTER" name="signup">
