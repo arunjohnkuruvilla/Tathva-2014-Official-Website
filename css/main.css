@@ -7,6 +7,125 @@ margin: 0;
 padding: 0;
 }
 
+#quickLinks
+{
+	position: fixed;
+	top:40%;
+	left: 0;
+	z-index: 99999;
+}
+#overlayPanel
+{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top:0;
+	left: 0;
+	z-index: 99999;
+	background: red;
+	overflow: none;
+}
+#overlayPanel
+{
+	display: none;
+}
+
+#block1
+{
+    width:25%;
+    height:100%;
+    background:green;
+    position: relative;
+    float:left;
+    transition:width 0.5s; /* Animation time */
+    -webkit-transition:width 0.5s; /* For Safari */
+}
+#block2
+{
+    width:25%;
+    height:100%;
+    background:blue;
+    position: relative;
+    float:left;
+    transition:width 0.5s; /* Animation time */
+    -webkit-transition:width 0.5s; /* For Safari */
+}
+#block3
+{
+    width:25%;
+    height:100%;
+    background:yellow;
+    position: relative;
+    float:left;
+    transition:width 0.5s; /* Animation time */
+    -webkit-transition:width 0.5s; /* For Safari */
+}
+#block4
+{
+    width:25%;
+    height:100%;
+    background:red;
+    position: relative;
+    float:left;
+    transition:width 0.5s; /* Animation time */
+    -webkit-transition:width 0.5s; /* For Safari */
+}
+
+#show1
+{
+    width:100%;
+    height:20%;
+    background:rgba(0,0,0,0.5);
+    position: relative;
+    float:left;
+    transition:height 0.5s; /* Animation time */
+    -webkit-transition:height 0.5s; /* For Safari */
+}
+#nites .page-description
+{
+	display: none;
+}
+#show2
+{
+    width:100%;
+    height:20%;
+    background:rgba(0,0,0,0.6);
+    position: relative;
+    float:left;
+    transition:height 0.5s; /* Animation time */
+    -webkit-transition:height 0.5s; /* For Safari */
+}
+#show3
+{
+    width:100%;
+    height:20%;
+    background:rgba(0,0,0,0.5);
+    position: relative;
+    float:left;
+    transition:height 0.5s; /* Animation time */
+    -webkit-transition:height 0.5s; /* For Safari */
+}
+#show4
+{
+    width:100%;
+    height:20%;
+    background:rgba(0,0,0,0.6);
+    position: relative;
+    float:left;
+    transition:height 0.5s; /* Animation time */
+    -webkit-transition:height 0.5s; /* For Safari */
+}
+#show5
+{
+    width:100%;
+    height:20%;
+    background:rgba(0,0,0,0.5);
+    position: relative;
+    float:left;
+    transition:height 0.5s; /* Animation time */
+    -webkit-transition:height 0.5s; /* For Safari */
+}
+
 
 #supersized {  display:block; position:fixed; left:0; top:0; overflow:hidden; z-index:-1; height:100%; width:100%; margin:0; padding:0; }
 
@@ -16,6 +135,23 @@ padding: 0;
 	height: 100%;
 	width: 100%;
 	background-size: 100%;
+}
+#nites
+{
+	height: 100%;
+	width: 100%;
+	-webkit-transition: background 0.5s;
+	transition: background 0.5s;
+}
+#shows
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-size: 100%;
+	transition: background 0.5s linear;
 }
 #events
 {
@@ -169,24 +305,22 @@ padding: 0;
 {
 	width: 100%;
 	color: white;
-	height: 400px;
+	height: 100%;
 	position: absolute;
 	z-index: 999999;		
 	text-align:center;
 	background:rgba(0,0,0,0.6);
-	clear: both;
 }
-#login-panel
-{
-	bottom: 3.3em;
-	display: none;
-}
-#login-panel .halfpanel
+.halfpanel
 {height:100%;width:50%;float:left}
 
 #signup-overlay
 {
 	background:#26292E;
+	z-index: 99999;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 #signup-overlay:hover
@@ -205,21 +339,35 @@ padding: 0;
 #signup-left
 {
 	background:green;
-	display: none;
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 #signup-right
 {
 	background:red;
-	display: none;
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 50%;
 }
 
-
+.overlayToShow
+{
+	z-index: 9999 !important;
+}
 
 
 #signin-overlay
 {
 	background:#2F3238;
+	background:#26292E;
+	z-index: 99999;
+	position: absolute;
+	top: 0;
+	left: 50%;
 }
 
 #signin-overlay:hover
@@ -238,12 +386,18 @@ padding: 0;
 #signin-left
 {
 	background:green;
-	display: none;
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 #signin-right
 {
 	background:red;
-	display: none;
+	z-index: 1000;
+	position: absolute;
+	top: 0;
+	left: 50%;
 }
 
 
@@ -602,7 +756,7 @@ h3.spec {
 	background: rgba(0,0,0,0.6);
 	height: 50px;
 	bottom: 0;
-	z-index: 2;
+	z-index: 1000;
 }
 
 #home-slider #nextslide,
@@ -963,14 +1117,14 @@ nav#post-login-menu #menu-nav li a:hover {
 
 .page {
 	background: #2F3238;
-	padding: 100px 0;
+	padding-top: 100px;
 	position: relative;
 	z-index: 99;
 }
 
 .page-alternate {
 	background: #26292E;
-	padding: 100px 0;
+	padding-top: 100px;
 	position: relative;
 	z-index: 99;
 }

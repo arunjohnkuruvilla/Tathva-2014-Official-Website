@@ -111,7 +111,7 @@
 <!-- Main Style -->
 <link href="css/main.css" rel="stylesheet">
 
-<!-- Supersized -->
+<link rel="stylesheet" type="text/css" href="css/style1.css" />
 
 
 <!-- Font Icons -->
@@ -129,53 +129,17 @@
 <!-- Google Font -->
 <link href="css/css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/sidebar.css">
-
+<link rel="stylesheet" type="text/css" href="css/modal.css" />
 <!-- Fav Icon -->
 
 <!-- Modernizr -->
 
 <body>
 
-
-      <div id="dashbar-panel">
+<div id="login" class="md-modal md-effect-10" id="modal-10">
+      <div class="md-content">
         
-          <div class="span4" style="height:400px;background:green">
-            <div id="loggedin-profile">
-              <div id=""></div>
-              <div id="profile"><span class="grey">Profile</span></div>
-              <div id="usid" class="inprofile" style="cursor:default"></div><br/>
-              <div id="uscollege" class="inprofile" style="cursor:default"></div><br/>
-              <div id="usphone" class="inprofile" style="cursor:default"></div><br/>
-              <div id="usmail" class="inprofile" style="cursor:default"></div><br/>
-              
-          </div>
-          </div>
-          <div class="span6" style="height:400px;background:red;">
-            <div id="usevents" style="cursor:default">
-                <div id="usersevents">
-                  <div id="noevent" class="profileevent">No events registered!</div>
-                </div>
-            </div>
-          </div>
-          <div class="span6" style="height:400px;background:blue;">
-           <div class="row">
-        <div class="span9">
-        
-          <form id="contact-form" class="contact-form" action="#">
-              <p class="contact-name">
-                <input id="contact_name" type="text" placeholder="Full Name" value="" name="name">
-                </p>
-                <p class="contact-email">
-                  <input id="contact_email" type="text" placeholder="Email Address" value="" name="email">
-                </p>
-            </form>
-        </div>   
-      </div>
-          </div>
-       
-      </div>
-
-      <div id="login-panel">
+         <div id="login-panel">
         <div id="signup-overlay" class="halfpanel">
           <span>REGISTER</span>
         </div> 
@@ -207,7 +171,7 @@
             </form>
         </div> 
         <div id="signup-right" class="halfpanel">
-          LOGIN
+          REGISTER
         </div> 
         <div id="signin-left" class="halfpanel">
           <form id="forgot-form" class="forgot-form" action="#">
@@ -236,6 +200,54 @@
             </form>
         </div>
       </div>
+          <button class="md-close">Close me!</button>
+        
+      </div>
+    </div>
+
+<div id="dashboard" class="md-modal md-effect-10" id="modal-10">
+  <div class="md-content">
+    <div class="span4" style="height:400px;background:green">
+            <div id="loggedin-profile">
+              <div id=""></div>
+              <div id="profile"><span class="grey">Profile</span></div>
+              <div id="usid" class="inprofile" style="cursor:default"></div><br/>
+              <div id="uscollege" class="inprofile" style="cursor:default"></div><br/>
+              <div id="usphone" class="inprofile" style="cursor:default"></div><br/>
+              <div id="usmail" class="inprofile" style="cursor:default"></div><br/>
+              
+          </div>
+          </div>
+          <div class="span6" style="height:400px;background:red;">
+            <div id="usevents" style="cursor:default">
+                <div id="usersevents">
+                  <div id="noevent" class="profileevent">No events registered!</div>
+                </div>
+            </div>
+          </div>
+          <div class="span6" style="height:400px;background:blue;">
+
+          </div>
+       
+  </div>
+</div>
+<div id="quickLinks">
+  <ul>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#workshops">Workshops</a></li>
+    <li><a href="#exhibitions">Exhibitions</a></li>
+    <li><a href="#online">Online</a></li>
+    <li><a href="#nites">Nites</a></li>
+    <li><a href="#lectures">Lectures</a></li>
+  </ul>
+</div>         
+
+      <div id="dashbar-panel">
+        
+          
+      </div>
+
+     
 <!-- Homepage Slider -->
 <div id="home-slider">	
     
@@ -259,7 +271,7 @@
                                 <li id="android"><a href="#">ANDROID APP</a></li>
                             </ul>
                         </div>
-	<div class="control-nav">
+	<div class="control-nav navbar">
         <nav id="menu" style="float:left;margin-left: 50px;">
             <ul id="menu-nav">
                 <?php echo $loginMenu; ?>
@@ -271,15 +283,16 @@
                 <li><a href="schedule.php">Schedule</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="sponsor.php">Sponsors</a></li>
+                <li><a href="#services">general Info</a></li>
             </ul>
         </nav>
         
-        <a id="nextsection" href="#navigation"><i class="font-icon-arrow-simple-down"></i></a>
+        <a id="nextsection" href="#highlights"><i class="font-icon-arrow-simple-down"></i></a>
     </div>
 </div>
 <!-- End Homepage Slider -->
 
-<!-- Header -->
+<!-- Header 
 <header class="navbar" id="navigation">
     <div class="sticky-wrapper" style="height: 50px;"><div class="sticky-nav">
         
@@ -295,37 +308,11 @@
 </header>
 <!-- End Header -->
 
-<div id="highlights" class="page-alternate">
-  <div class="container">
-      <!-- Title Page -->
-      <div class="row">
-          <div class="span12">
-              <div class="title-page">
-                  <h2 class="title">Highlights</h2>
-                  <h3 class="title-description">Learn About our Team &amp; Culture.</h3>
-                  <div class="ui-widget">
-
-<div class="ui-widget">
-  <label for="tags">Tags: </label>
-  <input id="tags">
-</div>
- 
-</div>
-
-                   
-                  <div class="page-description">
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
-                      Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
-                      <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
-                  </div>
-                  
-              </div>
-          </div>
-      </div>
-      <!-- End Title Page -->
-      
-      
-  </div>
+<div id="highlights">
+  <div id="block1"></div>
+  <div id="block2"></div>
+  <div id="block3"></div>
+  <div id="block4"></div>
 </div>
 
 <!-- Our Work Section -->
@@ -355,16 +342,43 @@
         <!-- End Portfolio Projects -->
     </div>
 </div>
+
+<div id="online" class="page">
+  <div class="container">
+      <!-- Title Page -->
+        <div class="row">
+            <div class="span12">
+                <div class="title-page">
+                    <h2 class="title">Online</h2>
+                    
+                    <h3 class="title-description">Check Out Our Projects on Dribbble</h3>
+                    
+                    <div class="page-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
+                    Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
+                    <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
+                  </div>
+                
+                </div>    
+            </div>
+        </div>
+        <!-- End Title Page -->
+        
+        <!-- Portfolio Projects -->
+        
+        <!-- End Portfolio Projects -->
+    </div>
+</div>
 <!-- End Our Work Section -->
 
 <!-- About Section -->
-<div id="about" class="page-alternate">
+<div id="workshops" class="page-alternate">
 <div class="container">
     <!-- Title Page -->
     <div class="row">
         <div class="span12">
             <div class="title-page">
-                <h2 class="title">Workshops & Exhibitions</h2>
+                <h2 class="title">Workshops</h2>
                 <h3 class="title-description">Learn About our Team &amp; Culture.</h3>
                 
                 <div class="page-description">
@@ -384,36 +398,80 @@
 <!-- End About Section -->
 
 <!-- Big Blockquote -->
-<div id="nites" class="page">
-    <div class="container">
-        <!-- Title Page -->
-        <div class="row">
-            <div class="span12">
-                <div class="title-page">
-                    <h2 class="title">Nites</h2>
-                    <h3 class="title-description">Check Out Our Projects on <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Dribbble</a>.</h3>
-                    
-                    <div class="page-description">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
-                        Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
-                        <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
-                    </div>
+<div id="nites">
+  <div id="shows">
+        
+  </div>
+  <div id="show1">
+          <h2 class="title">LINKIN PARK</h2>
+          <div class="page-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
+                    Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
+                    <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
+                </div>
                 
-                </div>    
-            </div>
         </div>
-        <!-- End Title Page -->
-        
-        <!-- Portfolio Projects -->
-        
-        <!-- End Portfolio Projects -->
-    </div>
+        <div id="show2">
+          <h2 class="title">TOMORROWLAND</h2>
+          <div class="page-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
+                    Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
+                    <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
+                </div>
+                
+        </div>
+        <div id="show3">
+          <h2 class="title">SWEDISH HOUSE MAFIA</h2>
+          <div class="page-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
+                    Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
+                    <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
+                </div>
+                
+        </div>
+        <div id="show4">
+          <h2 class="title">BACKSTREET BOYS</h2>
+          <div class="page-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
+                    Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
+                    <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
+                </div>
+                
+        </div>
+        <div id="show5">
+          <h2 class="title">HARRY POTTER</h2>
+          <div class="page-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
+                    Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
+                    <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
+                </div>
+                
+        </div>
 </div>
 <!-- End Big Blockquote -->
-
+<div id="exhibitions" class="page">
+  <div class="container">
+    <!-- Title Page -->
+    <div class="row">
+        <div class="span12">
+            <div class="title-page">
+                <h2 class="title">Exhibitions</h2>
+                <h3 class="title-description">The key to a successful network operation is to provide high quality services.</h3>
+                
+                <div class="page-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. 
+                    Ut neque eros, pulvinar eu blandit quis, lacinia nec ipsum. Etiam vel orci ipsum. Sed eget velit ipsum. Duis in tortor scelerisque felis mattis imperdiet. Donec at libero tellus. 
+                    <a href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">Suspendisse consectetur</a> consectetur bibendum. Pellentesque posuere, ligula volutpat elementum interdum, diam arcu elementum ipsum, vel ultricies est mauris ut nisi.</p>
+                </div>
+                
+            </div>
+        </div>
+    </div> 
+  </div>
+</div>
 <!-- Services Section -->
 <div id="lectures" class="page-alternate">
-<div class="container">
+  <div class="container">
     <!-- Title Page -->
     <div class="row">
         <div class="span12">
@@ -429,11 +487,10 @@
                 
             </div>
         </div>
-    </div>
+    </div> 
+  </div>
+</div>
 
-    
-</div>
-</div>
 <!-- End Services Section -->
 
 <!-- Google Map -->
@@ -499,11 +556,6 @@
 </footer>
 <!-- End Footer -->
 
-<!-- Back To Top -->
-<a id="back-to-top" href="http://themes.alessioatzeni.com/html/chakra/dark/index.html#">
-	<i class="font-icon-arrow-simple-up"></i>
-</a>
-<!-- End Back to Top -->
 <!-- Js -->
 
 
@@ -525,7 +577,185 @@
         <script type="text/javascript" src="js/tathvaRotate.js"></script>
         <script type="text/javascript" src="magic.js"></script>
         <script>
- 
+        var highlightsOriginal = '25%';
+        var highlightsExpanded = '40%';
+        var highlightsShrunk = '20%';
+  $('#block1').mouseenter(function() {
+    $('#block2').css({'width':highlightsShrunk});
+    $('#block3').css({'width':highlightsShrunk});
+    $('#block4').css({'width':highlightsShrunk});
+    $('#block1').css({'width':highlightsExpanded});
+  });
+  $('#block1').mouseleave(function() {
+    $('#block1').css({'width':highlightsOriginal});
+    $('#block2').css({'width':highlightsOriginal});
+    $('#block3').css({'width':highlightsOriginal});
+    $('#block4').css({'width':highlightsOriginal});
+  });
+  $('#block2').hover(function() {
+    $('#block1').css({'width':highlightsShrunk});
+    $('#block3').css({'width':highlightsShrunk});
+    $('#block4').css({'width':highlightsShrunk});
+    $('#block2').css({'width':highlightsExpanded});
+  });
+  $('#block2').mouseleave(function() {
+    $('#block1').css({'width':highlightsOriginal});
+    $('#block2').css({'width':highlightsOriginal});
+    $('#block3').css({'width':highlightsOriginal});
+    $('#block4').css({'width':highlightsOriginal});
+  });
+  $('#block3').hover(function() {
+    $('#block1').css({'width':highlightsShrunk});
+    $('#block2').css({'width':highlightsShrunk});
+    $('#block4').css({'width':highlightsShrunk});
+    $('#block3').css({'width':highlightsExpanded});
+  });
+  $('#block3').mouseleave(function() {
+    $('#block1').css({'width':highlightsOriginal});
+    $('#block2').css({'width':highlightsOriginal});
+    $('#block3').css({'width':highlightsOriginal});
+    $('#block4').css({'width':highlightsOriginal});
+  });
+  $('#block4').hover(function() {
+    $('#block1').css({'width':highlightsShrunk});
+    $('#block2').css({'width':highlightsShrunk});
+    $('#block3').css({'width':highlightsShrunk});
+    $('#block4').css({'width':highlightsExpanded});
+  });
+  $('#block4').mouseleave(function() {
+    $('#block1').css({'width':highlightsOriginal});
+    $('#block2').css({'width':highlightsOriginal});
+    $('#block3').css({'width':highlightsOriginal});
+    $('#block4').css({'width':highlightsOriginal});
+  });
+  $('#highlights').mouseleave(function() {
+    $('#block1').css({'width':highlightsOriginal});
+    $('#block2').css({'width':highlightsOriginal});
+    $('#block3').css({'width':highlightsOriginal});
+    $('#block4').css({'width':highlightsOriginal});
+  });
+  $('#show1').mouseenter(function() {
+    $('#nites').css({'background':'url(images/show1.jpg)'});
+  }); 
+  $('#show2').mouseenter(function() {
+    $('#nites').css({'background':'url(images/show2.jpg)'});
+  }); 
+  $('#show3').mouseenter(function() {
+    $('#nites').css({'background':'url(images/show3.jpg)'});
+  }); 
+  $('#show4').mouseenter(function() {
+    $('#nites').css({'background':'url(images/show4.jpg)'});
+  }); 
+  $('#show5').mouseenter(function() {
+    $('#nites').css({'background':'url(images/show5.jpg)'});
+  });  
+  $('#show1').mouseenter(function() {
+    $('#show1').css({'background':'rgba(0,0,0,0.8)'});
+    $('#show1 .page-description').fadeIn();
+    $('#show1').css({'height':'72%'});
+    $('#show2').css({'height':'7%'});
+    $('#show3').css({'height':'7%'});
+    $('#show4').css({'height':'7%'});
+    $('#show5').css({'height':'7%'});
+
+  });
+  $('#show1').mouseleave(function() {
+    $('#show1 .page-description').fadeOut();
+    $('#show1').css({'height':'20%'});
+    $('#show2').css({'height':'20%'});
+    $('#show3').css({'height':'20%'});
+    $('#show4').css({'height':'20'});
+    $('#show5').css({'height':'20%'});
+  });
+  $('#show2').mouseenter(function() {
+    $('#show2').css({'background':'rgba(0,0,0,0.8)'});
+    $('#show2 .page-description').fadeIn();
+    $('#show1').css({'height':'7%'});
+    $('#show2').css({'height':'72%'});
+    $('#show3').css({'height':'7%'});
+    $('#show4').css({'height':'7%'});
+    $('#show5').css({'height':'7%'});
+  });
+    $('#show2').mouseleave(function() {
+    $('#show2 .page-description').fadeOut();
+    $('#show1').css({'height':'20%'});
+    $('#show2').css({'height':'20%'});
+    $('#show3').css({'height':'20%'});
+    $('#show4').css({'height':'20'});
+    $('#show5').css({'height':'20%'});
+  });
+  $('#show3').mouseenter(function() {
+    $('#show3').css({'background':'rgba(0,0,0,0.8)'});
+    $('#show3 .page-description').fadeIn();
+    $('#show1').css({'height':'7%'});
+    $('#show2').css({'height':'7%'});
+    $('#show3').css({'height':'72%'});
+    $('#show4').css({'height':'7%'});
+    $('#show5').css({'height':'7%'});
+  });
+  $('#show3').mouseleave(function() {
+    $('#show3 .page-description').fadeOut();
+    $('#show1').css({'height':'20%'});
+    $('#show2').css({'height':'20%'});
+    $('#show3').css({'height':'20%'});
+    $('#show4').css({'height':'20'});
+    $('#show5').css({'height':'20%'});
+  });
+  $('#show4').mouseenter(function() {
+    $('#show4').css({'background':'rgba(0,0,0,0.8)'});
+    $('#show4 .page-description').fadeIn();
+    $('#show1').css({'height':'7%'});
+    $('#show2').css({'height':'7%'});
+    $('#show3').css({'height':'7%'});
+    $('#show4').css({'height':'72%'});
+    $('#show5').css({'height':'7%'});
+  });
+    $('#show4').mouseleave(function() {
+    $('#show4 .page-description').fadeOut();
+    $('#show1').css({'height':'20%'});
+    $('#show2').css({'height':'20%'});
+    $('#show3').css({'height':'20%'});
+    $('#show4').css({'height':'20'});
+    $('#show5').css({'height':'20%'});
+  });
+  $('#show5').mouseenter(function() {
+    $('#show5').css({'background':'rgba(0,0,0,0.8)'});
+    $('#show5 .page-description').fadeIn();
+    $('#show1').css({'height':'7%'});
+    $('#show2').css({'height':'7%'});
+    $('#show3').css({'height':'7%'});
+    $('#show4').css({'height':'7%'});
+    $('#show5').css({'height':'72%'});
+  });
+  $('#show5').mouseleave(function() {
+    $('#show5 .page-description').fadeOut();
+    $('#show1').css({'height':'20%'});
+    $('#show2').css({'height':'20%'});
+    $('#show3').css({'height':'20%'});
+    $('#show4').css({'height':'20'});
+    $('#show5').css({'height':'20%'});
+  });
+  $('#nites').mouseleave(function() {
+    $('#show1').css({'height':'20%'});
+    $('#show2').css({'height':'20%'});
+    $('#show3').css({'height':'20%'});
+    $('#show4').css({'height':'20%'});
+    $('#show5').css({'height':'20%'});
+  });
+  </script>
+  <script type="text/javascript">
+    $('#login-button').click(function(){
+      $('#login').addClass('md-show'); 
+    });
+    $('#button1').click(function(){
+      $.ajax("profile-details.php", 
+    {
+      dataType: "json",
+      success: fillProfile,
+      error: function(){salert("Something went wrong!");}
+    });
+      $('#dashboard').addClass('md-show'); 
+    });
     
 
   </script>

@@ -92,7 +92,6 @@ function updateSignIn(data)
 	}
 	else
 	{
-		$('#signin-form').empty();
 		resetPanels();
 		$('#login-panel').hide('slide', {direction: 'down'}, 1000,function() {
 			$('#menu-nav').append('<li><a id="button1" idstyle="font-size:1.5em">&#9776;</a></li>');
@@ -138,22 +137,20 @@ function updateSignUp(data) {
 
 	} 
 	else if(! data.success){
-		//$("#signin-username").val("");
-		//$("#signin-password").val("");
-		//$('#signin-form').append('<p>sorry Registeration Failed...Please try again</p>');
-		alert('Registeration unsuccessfull');
+		$("#signup-pass1").val("");
+		$("#signup-pass2").val("");
+		$('#signup-form').append('<p>Sorry Registeration Failed...Please try again</p>');
 	}
 	else
 	{
 		alert("Registeration successfull");
-		/*$('#signin-form').empty();
 		resetPanels();
 		$('#login-panel').hide('slide', {direction: 'down'}, 1000,function() {
 			$('#menu-nav').append('<li><a id="button1" idstyle="font-size:1.5em">&#9776;</a></li>');
 			$('#menu-nav').append('<li><a>' + data.message.username + '</a></li>');
 				$('#menu-nav').append('<li><a href="logout.php">LOG OUT</a></li>');
 		});
-		$('#menu-nav').empty();*/
+		$('#menu-nav').empty();
 	}
 	
 }
@@ -161,13 +158,16 @@ function updateSignUp(data) {
 //function to reset the login panel after signin or signup
 function resetPanels()
 {
-  currLeft.hide('slide', {direction: 'up'}, 1000);
-  currRight.hide('slide', {direction: 'up'}, 1000);
+  currLeft.removeClass('overlayToShow');
+  currRight.removeClass('overlayToShow');
   $('#signup-overlay').show();
   $('#signin-overlay').show();
   panelVisible = 1;
+  $('.md-modal').removeClass('md-show'); 
 }
-    $(function() {
+
+//function for smooth scroll to link
+$(function() {
   $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -175,7 +175,7 @@ function resetPanels()
       if (target.length) {
         $('html,body').animate({
           scrollTop: target.offset().top
-        }, 1000);
+        }, 1500);
         return false;
       }
     }

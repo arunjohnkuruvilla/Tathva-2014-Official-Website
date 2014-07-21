@@ -19,7 +19,7 @@ $('#login-button').hover(function () {
   //if(panelVisible == 0)
   //{
     //panelVisible = 1;
-    $('#login-panel').show('slide', {direction: 'down'}, 1000);
+    //$('#login-panel').show('slide', {direction: 'down'}, 1000);
   //}
   /*else
   {
@@ -37,28 +37,37 @@ $('#login-panel').mouseleave(function() {
 
 });
 
-$('#signup-overlay').click(function() {
-  $('#signup-overlay').hide('slide', {direction: 'up'}, 1000);
-  $('#signin-overlay').hide('slide', {direction: 'down'}, 1000,function() {
-    currLeft = $('#signup-left');
-    currRight = $('#signup-right');
-    selectionMade = 1;
-    $('#signup-left').show('slide', {direction: 'down'}, 1000);
-    $('#signup-right').show('slide', {direction: 'up'}, 1000);
-  });
-});
+
 
 $('#signin-overlay').click(function() {
-  $('#signup-overlay').hide('slide', {direction: 'up'}, 1000);
-  $('#signin-overlay').hide('slide', {direction: 'down'}, 1000,function() {
-    currLeft = $('#signin-left');
-    currRight = $('#signin-right');
-    selectionMade = 1;
-    $('#signin-left').show('slide', {direction: 'down'}, 1000);
-    $('#signin-right').show('slide', {direction: 'up'}, 1000);
+    $('#signin-left').addClass('overlayToShow',function() {
+      $('#signin-right').addClass('overlayToShow',function() {
+        $('#signup-overlay').hide('slide', {direction: 'up'}, 1000);
+        $('#signin-overlay').hide('slide', {direction: 'down'}, 1000);
+        currLeft = $('#signin-left');
+        currRight = $('#signin-right');
+        selectionMade = 1;
+    });
   });
 });
 
+$('#signup-overlay').click(function() {
+    $('#signup-left').addClass('overlayToShow',function() {
+      $('#signup-right').addClass('overlayToShow',function() {
+        $('#signup-overlay').hide('slide', {direction: 'up'}, 1000);
+        $('#signin-overlay').hide('slide', {direction: 'down'}, 1000);
+        currLeft = $('#signup-left');
+        currRight = $('#signup-right');
+        selectionMade = 1;
+    });
+  });
+});
+$(function() {
+  if ($(window).scrollTop() > $('#highlights').offset().top-100) {
+        $('.navbar').css('position', 'fixed');
+        $('.navbar').css('top', '0');
+    }
+});
 
     $(window).scroll(function () {
     winHeight = $(window).height();
@@ -67,11 +76,12 @@ $('#signin-overlay').click(function() {
         $('.navbar').css('top', '0');
     }
     else if($(window).scrollTop() < $('#highlights').offset().top) {
-        $('.navbar').css('position', 'relative');
-        $('.navbar').css('top', '0');
+        $('.navbar').css('position', 'absolute');
+        $('.navbar').css('top', 'auto');
+        $('.navbar').css('bottom', '0');
     }
 });
-/*function fillProfile(d)  //tat_id: "", name: "", college: "", phone: "", email: "", events: []
+function fillProfile(d)  //tat_id: "", name: "", college: "", phone: "", email: "", events: []
 {
   $("#usid").html("<span class=\"grey\">Tathva ID : </span>TAT"+d['tat_id']);
   $("#uscollege").html("<span class=\"grey\">College: </span>"+d['college']);
@@ -96,9 +106,8 @@ $('#signin-overlay').click(function() {
     {
       salert("123");
     }
-}*/
-
-$("#signin").submit(function(event){
+}
+/*$("#signin").submit(function(event){
     var name = $("#signin-username").val();  
     var password = $("#signin-password").val();  
     if (name == "") { 
@@ -148,3 +157,4 @@ function updateLogIn()
   resetPanels();
   $('#login-panel').slideToggle('slow');
 }   
+*/
